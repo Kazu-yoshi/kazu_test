@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本語→英語翻訳システム</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    #google_translate_element {
+      margin-bottom: 1rem;
+    }
+
+    #url-input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="google_translate_element"></div>
+    <label for="url-input">URLを入力:</label>
+    <input type="url" id="url-input" placeholder="https://example.com">
+    <button id="translate-url">翻訳する</button>
+    <h1>翻訳システム2</h1>
+    <p>ここにウェブサイトのテキストが表示されます。</p>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+
+    document.getElementById('translate-url').addEventListener('click', function() {
+      var url = document.getElementById('url-input').value;
+      window.location.href = "https://translate.google.com/translate?hl=ja&sl=ja&tl=en&u=" + encodeURIComponent(url);
+    });
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
