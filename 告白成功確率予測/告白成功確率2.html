@@ -1,0 +1,105 @@
+# kazu_test
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>告白成功確率予測サイト</title>
+    <link rel="stylesheet" href="告白成功確率2.css">
+</head>
+<body>
+    <h1>告白成功確率予測サイト</h1>
+    <h2>ChatGPTによる予測</h2>
+    <form id="predictionForm">
+            <!-- 質問と選択肢をここに追加 -->
+            
+        <div class="input-group">
+            <label for="gender">性別:</label>
+            <select name="gender" id="gender">
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="month">時期 (月):</label>
+            <input type="number" name="month" id="month" min="1" max="12" required>
+        </div>
+
+        <div class="input-group">
+            <label for="duration">出会ってから告白するまでの期間 (ヶ月):</label>
+            <input type="number" name="duration" id="duration" min="0" required>
+        </div>
+
+        <div class="input-group">
+            <label for="time">告白する時間帯:</label>
+            <select name="time" id="time">
+                <option value="0-5">0時〜5時</option>
+                <option value="6-11">6時〜11時</option>
+                <option value="12-17">12時〜17時</option>
+                <option value="18-23">18時〜23時</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="location">告白する場所:</label>
+            <select name="location" id="location">
+                <option value="自分の家">自分の家</option>
+                <option value="相手の家">相手の家</option>
+                <option value="学校">学校</option>
+                <option value="道端">道端</option>
+                <option value="公園">公園</option>
+                <option value="車内">車内</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="method">告白の手段:</label>
+            <select name="method" id="method">
+                <option value="直接対面">直接対面</option>
+                <option value="電話">電話</option>
+                <option value="手紙">手紙</option>
+                <option value="メール">メール</option>
+                <option value="その他">その他</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="content">告白する内容:</label>
+            <select name="content" id="content">
+                <option value="好意のみ">好意のみ</option>
+                <option value="交際申し込み">交際申し込み</option>
+                <option value="好意＋交際申し込み">好意＋交際申し込み</option>
+                <option value="遠回し">遠回し</option>
+                <option value="その他">その他</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+        <label for="relationship_status">相手の恋愛状況:</label>
+            <select name="relationship_status" id="relationship_status">
+                <option value="恋人がいた">恋人がいた</option>
+                <option value="誰かに片思い">誰かに片思い</option>
+                <option value="失恋直後">失恋直後</option>
+                <option value="自分に恋愛感情">自分に恋愛感情</option>
+                <option value="何もなし">何もなし</option>
+                <option value="分からない">分からない</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="age_difference">相手との年齢差:</label>
+            <select name="age_difference" id="age_difference">
+                <option value="3歳以上年上">3歳以上年上</option>
+                <option value="1〜2歳以上年上">1〜2歳以上年上</option>
+                <option value="同い年1〜2歳年下">同い年〜1〜2歳年下</option>
+                <option value="3歳以上年下">3歳以上年下</option>
+            </select>
+        </div>
+    </form>
+
+    <button type="button" id="calculateProbabilityButton">確率を計算</button>
+    <div id="result"></div>
+    <script src="告白成功確率2.js"></script>
+</body>
+</html>
